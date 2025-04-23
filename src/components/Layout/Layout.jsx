@@ -33,7 +33,7 @@ const Layout = () => {
           component="main"
           sx={{
             flexGrow: 1,
-            px: 8.1,
+            px: 4.4,
             py: 4,
             backgroundColor: "#f8f9fa",
             overflowY: "auto",

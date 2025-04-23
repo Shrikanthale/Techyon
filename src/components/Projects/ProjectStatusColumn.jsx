@@ -4,42 +4,42 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectStatusColumn = ({ title, color, count, projects }) => {
   const statusColors = {
-    "Not Started": "#f44336",
-    "In Progress": "#2196f3",
-    "In Review": "#ff9800",
-    Completed: "#4caf50",
+    "Not Started": "#B0B0B0",
+    "In Progress": "#4A90E2",
+    Archived: "#607D8B",
+    Completed: "#4CAF50",
   };
 
   const statusColor = statusColors[title] || color;
 
   return (
-    <Box>
+    <Box sx={{ mb: 2, mt: 2 }}>
       <Box
         sx={{
+          mb: 2,
           display: "flex",
           alignItems: "center",
-          mb: 2,
-          mt: 2,
+          background: statusColor,
+          borderRadius: "10px",
+          textAlign: "center",
+          width: "110px",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <Typography variant="subtitle1" sx={{ fontWeight: 500, mr: 1 }}>
-          {title}
-        </Typography>
-        <Box
+        <Typography
+          variant="subtitle1"
           sx={{
-            bgcolor: statusColor,
-            color: "white",
-            borderRadius: "50%",
-            width: 24,
-            height: 24,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 14,
+            fontWeight: 600,
+            fontSize: "12px",
+            mr: 1,
+            fontFamily: "Inter",
+            color: "#FFFFFF",
           }}
         >
+          {title} &nbsp;
           {count}
-        </Box>
+        </Typography>
       </Box>
 
       <Stack spacing={2}>

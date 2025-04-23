@@ -137,19 +137,31 @@ const ProjectsSection = () => {
           </IconButton>
         </Box>
       </Box>
-
-      <Grid container spacing={3}>
-        {projectStatuses.map((status) => (
-          <Grid item xs={12} sm={6} md={3} key={status.id}>
-            <ProjectStatusColumn
-              title={status.label}
-              color={status.color}
-              count={mockProjects.filter((p) => p.status === status.id).length}
-              projects={mockProjects.filter((p) => p.status === status.id)}
-            />
-          </Grid>
-        ))}
-      </Grid>
+      <Box
+        sx={{
+          py: 1,
+          px: 4.5,
+          border: "1.5px solid #F1F1F1",
+          borderRadius: "10px",
+          boxShadow: "0px 9px 10px #2D446E1A",
+          mt: 2,
+        }}
+      >
+        <Grid container spacing={3}>
+          {projectStatuses.map((status) => (
+            <Grid item xs={12} sm={6} md={3} key={status.id}>
+              <ProjectStatusColumn
+                title={status.label}
+                color={status.color}
+                count={
+                  mockProjects.filter((p) => p.status === status.id).length
+                }
+                projects={mockProjects.filter((p) => p.status === status.id)}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 };

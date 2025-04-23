@@ -1,7 +1,8 @@
 export const projectStatuses = [
   { id: "not-started", label: "Not Started", color: "status.notStarted" },
   { id: "in-progress", label: "In Progress", color: "status.inProgress" },
-  { id: "in-review", label: "In Review", color: "status.inReview" },
+  { id: "archived", label: "Archived", color: "status.archived" },
+  // { id: "in-review", label: "In Review", color: "status.inReview" },
   { id: "completed", label: "Completed", color: "status.completed" },
 ];
 
@@ -29,7 +30,7 @@ export const mockProjects = [
   {
     id: 3,
     name: "Project Name",
-    status: "in-review",
+    status: "archived",
     progress: 75,
     startDate: "01/01/2024",
     endDate: "31/01/2024",
