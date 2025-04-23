@@ -19,6 +19,7 @@ const ProjectStatusColumn = ({ title, color, count, projects }) => {
           display: "flex",
           alignItems: "center",
           mb: 2,
+          mt: 2,
         }}
       >
         <Typography variant="subtitle1" sx={{ fontWeight: 500, mr: 1 }}>

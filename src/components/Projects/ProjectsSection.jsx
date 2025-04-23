@@ -161,4 +161,5 @@ const routeText = {
   fontWeight: 400,
   color: "#8A8A8A",
   fontFamily: "Inter",
+  textShadow: "2px 2px 4px #404040",
 };
