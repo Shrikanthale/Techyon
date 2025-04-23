@@ -13,6 +13,7 @@ import {
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import foldericon from "../../assets/dashboard/foldericon.png";
+import pinfile from "../../assets/dashboard/pinfile.png";
 const ProjectCard = ({ project, statusColor }) => {
   const projectId = `${project.id}-${project.id + 11}`;
 
@@ -150,11 +151,12 @@ const ProjectCard = ({ project, statusColor }) => {
               10+
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <InsertDriveFileOutlinedIcon
-              sx={{ fontSize: 16, color: "text.secondary", mr: 0.5 }}
-            />
-            <Typography variant="caption" color="text.secondary">
+          <Box sx={{ display: "flex", alignItems: "center", gap: "5px" }}>
+            <img src={pinfile} alt="File Icon" width={"12px"} height={"12px"} />
+            <Typography
+              variant="caption"
+              sx={{ fontSize: "12px", fontFamily: "Inter", fontWeight: 700 }}
+            >
               {project.files} Files
             </Typography>
           </Box>
