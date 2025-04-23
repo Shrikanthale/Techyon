@@ -16,7 +16,7 @@ const Layout = () => {
     <Box
       sx={{
         display: "flex",
-        height: "100vh",
+        height: "auto",
         backgroundColor: "#f8f9fa",
         width: "100vw",
       }}
