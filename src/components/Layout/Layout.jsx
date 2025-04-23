@@ -13,7 +13,14 @@ const Layout = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", height: "100vh", backgroundColor: "#f8f9fa" }}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "100vh",
+        backgroundColor: "#f8f9fa",
+        width: "100vw",
+      }}
+    >
       <Sidebar />
       <Box
         sx={{
