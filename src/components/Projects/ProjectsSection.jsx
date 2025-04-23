@@ -140,11 +140,13 @@ const ProjectsSection = () => {
       <Box
         sx={{
           py: 1,
-          px: 4.5,
           border: "1.5px solid #F1F1F1",
           borderRadius: "10px",
           boxShadow: "0px 9px 10px #2D446E1A",
           mt: 2,
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
         }}
       >
         <Grid container spacing={3}>

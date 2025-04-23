@@ -20,7 +20,7 @@ const ProjectCard = ({ project, statusColor }) => {
     <Card
       elevation={0}
       sx={{
-        width: 280,
+        width: 320,
         border: "1px solid rgba(0, 0, 0, 0.08)",
         borderRadius: 2,
         "&:hover": {
