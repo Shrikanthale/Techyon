@@ -54,7 +54,7 @@ const ProjectStatusColumn = ({ title, color, count, projects }) => {
           variant="text"
           color="primary"
           sx={{
-            justifyContent: "flex-start",
+            justifyContent: "center",
             textTransform: "none",
             px: 0,
             "&:hover": {
