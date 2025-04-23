@@ -33,28 +33,56 @@ const ProjectCard = ({ project, statusColor }) => {
           <Typography variant="body1" fontWeight={500} sx={{ flex: 1 }}>
             {project.name}
           </Typography>
-          <Typography variant="caption" color="text.secondary">
-            {projectId}
+          <Typography variant="caption" color="#404040" fontWeight={700}>
+            ID: {projectId}
           </Typography>
         </Box>
 
-        <Box sx={{ px: 0.5, mb: 2 }}>
+        <Box mt={1} mb={1} position="relative">
           <LinearProgress
             variant="determinate"
-            value={project.progress}
+            value={50}
             sx={{
-              height: 6,
-              borderRadius: 3,
-              mb: 0.5,
-              backgroundColor: "rgba(0, 0, 0, 0.08)",
+              height: 15,
+              borderRadius: 5,
+              backgroundColor: "#e0e0e0",
               "& .MuiLinearProgress-bar": {
-                backgroundColor: statusColor,
+                borderRadius: 5,
+                backgroundColor: "#66CC66",
               },
             }}
           />
-          <Typography variant="caption" color="text.secondary">
-            {project.progress}%
+          <Typography
+            variant="caption"
+            color="#2D446E"
+            fontWeight={600}
+            sx={{
+              position: "absolute",
+              top: -2,
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          >
+            50%
           </Typography>
+          {/* Custom Badge */}
+          {/* <Box
+            sx={{
+              position: "absolute",
+              top: -22,
+              right: -10,
+              backgroundColor: "#D2C305",
+              color: "black",
+              fontWeight: 600,
+              fontSize: 12,
+              px: 1,
+              py: 0.3,
+              borderRadius: "6px 6px 6px 0",
+              boxShadow: 1,
+            }}
+          >
+            On Track
+          </Box> */}
         </Box>
 
         <Grid container spacing={1} alignItems="center">
@@ -112,3 +140,77 @@ const ProjectCard = ({ project, statusColor }) => {
 };
 
 export default ProjectCard;
+
+// import React from "react";
+// import { Card, CardContent } from "@mui/material";
+// import { Typography, LinearProgress, Avatar, Box, Stack } from "@mui/material";
+// import FolderIcon from "@mui/icons-material/Folder";
+// import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+// import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+
+// const ProjectCard = () => {
+//   return (
+//     <Card sx={{ width: 280, borderRadius: 2, boxShadow: 3, position: 'relative', p: 1 }}>
+//       <Box display="flex" justifyContent="space-between" alignItems="center">
+//         <Box display="flex" alignItems="center" gap={1}>
+//           <FolderIcon fontSize="small" />
+//           <Typography fontWeight={600}>Project Name</Typography>
+//         </Box>
+//         <Typography variant="body2" color="text.secondary">
+//           ID: P-11
+//         </Typography>
+//       </Box>
+
+//       <Box mt={1} position="relative">
+//         <LinearProgress
+//           variant="determinate"
+//           value={50}
+//           sx={{ height: 10, borderRadius: 5, backgroundColor: '#e0e0e0' }}
+//         />
+//         <Typography
+//           variant="caption"
+//           color="white"
+//           fontWeight={600}
+//           sx={{ position: "absolute", top: -2, left: '50%', transform: 'translateX(-50%)' }}
+//         >
+//           50%
+//         </Typography>
+//         {/* Custom Badge */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: -22,
+//             right: -10,
+//             backgroundColor: '#D2C305',
+//             color: 'black',
+//             fontWeight: 600,
+//             fontSize: 12,
+//             px: 1,
+//             py: 0.3,
+//             borderRadius: '6px 6px 6px 0',
+//             boxShadow: 1
+//           }}
+//         >
+//           On Track
+//         </Box>
+//       </Box>
+
+//       <Typography variant="body2" color="text.secondary" mt={1}>
+//         01/01/2024 - 31/01/2024
+//       </Typography>
+
+//       <Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
+//         <Box display="flex" alignItems="center">
+//           <Avatar sx={{ width: 24, height: 24 }} src="/avatar1.jpg" />
+//           <Typography variant="body2" ml={1}>10+</Typography>
+//         </Box>
+//         <Box display="flex" alignItems="center">
+//           <InsertDriveFileIcon fontSize="small" sx={{ mr: 0.5 }} />
+//           <Typography variant="body2">12 Files</Typography>
+//         </Box>
+//       </Stack>
+//     </Card>
+//   );
+// };
+
+// export default ProjectCard;
