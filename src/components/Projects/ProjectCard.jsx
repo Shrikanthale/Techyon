@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-
+import foldericon from "../../assets/dashboard/foldericon.png";
 const ProjectCard = ({ project, statusColor }) => {
   const projectId = `${project.id}-${project.id + 11}`;
 
@@ -20,6 +20,7 @@ const ProjectCard = ({ project, statusColor }) => {
     <Card
       elevation={0}
       sx={{
+        width: 280,
         border: "1px solid rgba(0, 0, 0, 0.08)",
         borderRadius: 2,
         "&:hover": {
@@ -28,11 +29,34 @@ const ProjectCard = ({ project, statusColor }) => {
       }}
     >
       <CardContent sx={{ p: "16px", "&:last-child": { pb: "16px" } }}>
-        <Box sx={{ display: "flex", alignItems: "flex-start", mb: 1.5 }}>
-          <Checkbox size="small" sx={{ p: 0, mr: 1.5 }} />
-          <Typography variant="body1" fontWeight={500} sx={{ flex: 1 }}>
-            {project.name}
-          </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: "3px" }}>
+            <img
+              src={foldericon}
+              alt="Folder Icon"
+              width={"12px"}
+              height={"12px"}
+            />
+            <Typography
+              variant="body1"
+              fontWeight={500}
+              sx={{
+                flex: 1,
+                ml: 1,
+                fontSize: "12px",
+                fontFamily: "Inter",
+                fontWeight: 700,
+              }}
+            >
+              {project.name}
+            </Typography>
+          </Box>
           <Typography variant="caption" color="#404040" fontWeight={700}>
             ID: {projectId}
           </Typography>
@@ -85,55 +109,56 @@ const ProjectCard = ({ project, statusColor }) => {
           </Box> */}
         </Box>
 
-        <Grid container spacing={1} alignItems="center">
+        <Grid container spacing={1} alignItems="center" mt={2}>
           <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <CalendarTodayOutlinedIcon
                 sx={{ fontSize: 16, color: "text.secondary", mr: 0.5 }}
               />
-              <Typography variant="caption" color="text.secondary">
+              <Typography variant="caption" color="#404040" fontWeight={700}>
                 {project.startDate} - {project.endDate}
               </Typography>
             </Box>
           </Grid>
-
-          <Grid item xs={6}>
-            <Box
+        </Grid>
+        <Box component={"hr"} sx={{ borderBottom: "0.1px solid #FEFEFE" }} />
+        <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
+          <Box sx={{ display: "flex", mr: 1, alignItems: "center" }}>
+            {[...Array(3)].map((_, i) => (
+              <Avatar
+                key={i}
+                sx={{
+                  width: 24,
+                  height: 24,
+                  fontSize: "0.75rem",
+                  bgcolor: "grey.300",
+                  border: "1px solid white",
+                  ml: i > 0 ? -1 : 0,
+                }}
+              >
+                P
+              </Avatar>
+            ))}
+            <Typography
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
+                fontSize: "12px",
+                fontFamily: "Inter",
+                fontWeight: 700,
+                ml: 0.5,
               }}
             >
-              <Box sx={{ display: "flex", mr: 1 }}>
-                {[...Array(3)].map((_, i) => (
-                  <Avatar
-                    key={i}
-                    sx={{
-                      width: 24,
-                      height: 24,
-                      fontSize: "0.75rem",
-                      bgcolor: "grey.300",
-                      border: "1px solid white",
-                      ml: i > 0 ? -1 : 0,
-                    }}
-                  >
-                    P
-                  </Avatar>
-                ))}
-              </Box>
-
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <InsertDriveFileOutlinedIcon
-                  sx={{ fontSize: 16, color: "text.secondary", mr: 0.5 }}
-                />
-                <Typography variant="caption" color="text.secondary">
-                  {project.files} Files
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
+              10+
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <InsertDriveFileOutlinedIcon
+              sx={{ fontSize: 16, color: "text.secondary", mr: 0.5 }}
+            />
+            <Typography variant="caption" color="text.secondary">
+              {project.files} Files
+            </Typography>
+          </Box>
+        </Box>
       </CardContent>
     </Card>
   );
